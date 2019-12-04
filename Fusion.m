@@ -115,10 +115,10 @@ Det = PanWV_db - I;
 L = size(Patches_MS_U_1,2);
 N = size(Patches_MS_U_1,1);
 
-EHMS(:,:,1) = Tiling_av(Decoded(1:N,1:L), Patch_size, overlap, BlX, BlY, PadX, PadY, r, c);
-EHMS(:,:,2) = Tiling_av(Decoded(1:N,L+1:2*L), Patch_size, overlap, BlX, BlY, PadX, PadY, r, c);
-EHMS(:,:,3) = Tiling_av(Decoded(1:N,2*L+1:3*L), Patch_size, overlap, BlX, BlY, PadX, PadY, r, c);
-EHMS(:,:,4) = Tiling_av(Decoded(1:N,3*L+1:4*L), Patch_size, overlap, BlX, BlY, PadX, PadY, r, c);
+EHMS(:,:,1) = Tiling_av(Decoded(1:N,1:L/4), Patch_size, overlap, BlX, BlY, PadX, PadY, r, c);
+EHMS(:,:,2) = Tiling_av(Decoded(1:N,(L/4)+1:L/2), Patch_size, overlap, BlX, BlY, PadX, PadY, r, c);
+EHMS(:,:,3) = Tiling_av(Decoded(1:N,(L/2)+1:(L*0.75)), Patch_size, overlap, BlX, BlY, PadX, PadY, r, c);
+EHMS(:,:,4) = Tiling_av(Decoded(1:N,(L*0.75)+1:L), Patch_size, overlap, BlX, BlY, PadX, PadY, r, c);
 
 %% Fusion products
 
